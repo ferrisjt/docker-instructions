@@ -1,0 +1,19 @@
+Install Docker: Run apt commands from official guide, add user to group, relog.
+Dir: mkdir uptime-kuma; cd uptime-
+
+
+docker-compose.yml:
+
+"textversion: '3.3'
+services:
+  uptime-kuma:
+    image: louislam/uptime-kuma:1
+    container_name: uptime-kuma
+    volumes: [./uptime-kuma-data:/app/data]
+    ports: [3001:3001]
+    restart: always"
+
+
+
+Run: docker compose up -d
+Access: http://your-vm-ip:3001, setup account, add monitor.
